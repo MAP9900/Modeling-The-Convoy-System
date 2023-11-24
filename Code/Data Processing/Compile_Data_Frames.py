@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 
-#In this file, five convoy routes are compiled into on csv file. Sink percentages (overall, escort, and straggler) \
+#In this file, five convoy routes are compiled into one csv file. Sink percentages (overall, escort, and straggler) \
 # are also calculated, along with the addition of seven new features. 
 
 #After the different routes were compiled, a couple entries had to be manually changed due to unforseen issues with the raw data. 
