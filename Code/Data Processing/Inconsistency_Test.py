@@ -1,6 +1,8 @@
 #Imports
 import pandas as pd
 
+#Here the different convoy routes are cross referenced with another source to find instances where the sinking of a particular ship \
+# does not align. 
 
 SC_data = pd.read_excel('Excel_Files/Transformed/SC_Transformed_Data.xlsx')
 HX_data = pd.read_excel('Excel_Files/Transformed/HX_Transformed_Data.xlsx')
