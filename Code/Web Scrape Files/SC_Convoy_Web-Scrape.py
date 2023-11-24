@@ -7,7 +7,6 @@ from selenium.webdriver.chrome.service import Service
 import pandas as pd
 import time
 
-
 #Web Scrape Bot
 def SC_WebScrape():
     chromedriver_path = '/usr/local/bin/chromedriver'
