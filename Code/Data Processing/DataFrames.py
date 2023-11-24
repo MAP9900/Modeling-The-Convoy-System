@@ -3,7 +3,10 @@ import pandas as pd
 import numpy as np
 import re
 
-#Cleaning all the Convoy DataFrames  SC, HX, OB, ON All Complete
+#Cleaning all the Convoy DataFrames  
+#SC, HX, OB, ON All Complete
+
+#Turns the raw data with each indiviual ships as rows into a new dataframe with the convoy route number as each row.
 
 SC_data = pd.read_excel('Excel_Files/Raw_Data/SC_Convoy_Data_1.xlsx')
 def Clean_Data_SC(SC_data):
