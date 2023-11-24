@@ -80,7 +80,7 @@ def HX_Dates():
         HX_Dates = pd.concat([HX_Dates, new_row], ignore_index=True) 
         driver.switch_to.default_content()
         driver.switch_to.frame('hxside')  #Switch back to frame with menu to preform the loop
-    HX_Dates.to_excel('HX_Convoy_Dates.xlsx')
+    #HX_Dates.to_excel('HX_Convoy_Dates.xlsx')
     driver.quit()
     return HX_Dates
 print(HX_Dates().head()) #Test/Run function
