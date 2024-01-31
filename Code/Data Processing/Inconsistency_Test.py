@@ -65,7 +65,7 @@ def Test_ON():
     ON_Incosistent_data = ON_Differences[['ON Convoy Number', 'Number of Ships Sunk', 'Ships Sunk']]
     ON_Incosistent_data.to_excel('ON_Differnces.xlsx') #Used to manually change incorrect entries
     return ON_Incosistent_data
-print(Test_ON().head())
+#print(Test_ON().head())
 
 def Test_ONS():
     ONS = UBoat_data['Convoy'].str.contains('ONS.', na=False)
