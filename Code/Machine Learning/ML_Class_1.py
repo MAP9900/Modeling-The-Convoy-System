@@ -17,15 +17,16 @@ from xgboost import XGBRegressor
 
 class Model_Tester:
 
-    def __init__(self, model = None, scaler = None, parameter_grid = None, cv_folds = 5, feature_names = None):
+    def __init__(self, model = None, scaler = None, parameter_grid = None, cv_folds:int = 5, feature_names:list = None):
         """
         Class Initializer
 
             model: Model used for machine learning (defaults to random classifier)
             scaler: Scaler used for K-Fold cross-validation
             parameter_grid: Dictionary of hyperparamters for use in Grid Search Cross-Validation
-            cv_folds: The number of folds used in cross-validation (defaults to 5)
-            feature_names: List of feature names for use in feature importance plot. Optional 
+            cv_folds: The number (integer) of folds used in cross-validation (defaults to 5)
+            feature_names: List of feature names for use in feature importance plot. Class stores feature names automatically if they are 
+            there. Otherwise a list must be given to return a feature plot. 
         """
         if model is not None and not hasattr(model, "fit"):
             raise ValueError(f"Error: model must be a scikit-learn classifier, but got {type(model)}")
@@ -44,6 +45,7 @@ class Model_Tester:
     def train_test_split(self, X, y, train_size = 0.8, random_state = 1945):
         """
         Perfomr Train Test Split
+
         """
         self.X_train, self. X_test, self.y_train, self.y_test = train_test_split(
             X, y, train_size=train_size, random_state=random_state, stratify=y)
@@ -151,10 +153,12 @@ class Model_Tester:
         cm = confusion_matrix(self.y_test, y_predict)
         self.plot_confusion_matrix(cm)
 
-        #Feature Importance
+        #Feature Importance Plot
         if hasattr(self.best_model, "feature_importances_"):
             print(f"{model_name} Feature Importance Plot:")
             self.plot_feature_importance()
+        else:
+            print('Model has no attribute: Feature Importances')
 
     def plot_roc_curve(self, fpr, tpr, ROC_AUC):
         """
